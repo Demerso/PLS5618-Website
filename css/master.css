@@ -1,0 +1,157 @@
+body {
+  background: darkblue url("../img/back.svg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: sans-serif;
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+a.inline {
+  color: black;
+}
+
+.header > img {
+  display: block;
+  max-height: 100vh;
+  width: auto;
+  max-width: 100%;
+}
+
+hr.separator {
+  height: 20px;
+  background: white;
+  border: none;
+}
+
+.info-grid {
+  width: 90%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 50px;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.info-grid > .history {
+  grid-column: 1 / 3;
+}
+
+.seasons-table > tbody > tr > th, td{
+  padding: 5px;
+}
+
+.seasons-table > tbody > tr > th.season{
+  background: orange;
+}
+
+.seasons-table > caption {
+  font-size: 1.25em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.info-grid > .picture > img {
+  display: flex;
+  max-width: 100%;
+  height: auto;
+}
+
+.info-grid > .picture {
+  padding: 0px;
+}
+
+.info-box > h1 {
+  font-size: 1.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.info-box > h2 {
+  font-size: 1.25em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.info-box > p {
+  text-align: justify;
+}
+
+.info-box {
+  border: 10px solid white;
+  padding: 10px;
+  color: black;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 0 10px black;
+}
+
+.social > .rectangle {
+  background: white;
+  padding: 10px;
+  box-shadow: inset 0 0 10px black;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.social > .rectangle > a > img {
+  display: flex;
+  width: 8vw;
+  height: auto;
+}
+
+.seasons-grid {
+  width: 50%;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+}
+
+.seasons-grid > .season-info > a {
+  text-decoration: none;
+}
+
+.seasons-grid > .season-info > a > img {
+  padding: 5px;
+  padding-top: 0px;
+  display: flex ;
+  max-width: calc(100% - 10px);
+  height: auto;
+  background: white;
+}
+
+.seasons-grid > .season-info > a > h2 {
+  max-width: 100%;
+  margin-bottom: 0px;
+  padding: 10px;
+  padding-bottom: 0px;
+  background: white;
+  color: black;
+  font-size: 2em;
+}
+
+a.return-button {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  padding: 5px;
+}
+
+@media print {
+  body {color: black}
+  a {color: blue}
+}
