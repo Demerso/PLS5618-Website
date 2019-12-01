@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Anton|Heebo&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Archivo+Black|Heebo&display=swap");
 /*
-font-family: 'Anton', sans-serif;
 font-family: 'Heebo', sans-serif;
+font-family: 'Archivo Black', sans-serif;
 */
 * {
   margin: 0;
@@ -11,6 +11,7 @@ font-family: 'Heebo', sans-serif;
   text-decoration: none;
   color: black;
   font-weight: normal;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -26,11 +27,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   min-height: 100vh;
-  background-image: url("../img/back.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 body header {
@@ -42,6 +38,10 @@ body header {
           justify-content: center;
   width: 100%;
   height: 100vh;
+  background-image: url("../img/back.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 body header img {
@@ -52,81 +52,11 @@ body header img {
   max-width: 100vw;
 }
 
-body #about {
-  margin: 10px;
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-body #about div {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.75);
-}
-
-body #about div * {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-body #about div li {
-  margin-left: 20px;
-}
-
-body #about div h1 {
-  margin-top: 5px;
-}
-
-body #about div h2 {
-  background-color: orange;
-}
-
-body #social {
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-body #social a {
-  margin: 10px;
-  height: 130px;
-  width: 130px;
-}
-
-body #seasons {
-  margin: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-body #seasons div {
+body nav {
+  z-index: 1;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,73 +64,125 @@ body #seasons div {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 15px;
   background-color: white;
-  margin-bottom: 10px;
+  -webkit-box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
 }
 
-body #seasons div img {
-  width: 75%;
-  border: 5px solid white;
+body nav navlinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-body #seasons div p {
-  text-align: center;
-  font-size: 2em;
-}
-
-body #seasons div p:not(:first-child) {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-body #seasons div p:first-child {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-}
-
-body #season {
-  margin: 10px;
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.75);
-}
-
-.return-button {
-  -ms-flex-line-pack: center;
-      align-content: center;
-  background-color: white;
+body nav navlinks a {
   padding: 5px;
-  border-radius: 2px;
-  font-size: 2em;
-  margin: 0 10px;
+  margin: 0 5px;
+  border-radius: 3px;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Anton", sans-serif;
+body nav navlinks a:hover {
+  background-color: lightblue;
 }
 
-.fullscreen {
-  margin: 0;
-  padding: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100vh;
-  width: 100%;
+body nav img {
+  width: 32px;
+  height: 32px;
 }
 
-hr {
-  z-index: 1;
-  height: 20px;
-  border: none;
-  background-color: white;
-  -webkit-box-shadow: 0px 0px 5px 2px black;
-          box-shadow: 0px 0px 5px 2px black;
+body section {
+  margin-top: 15px;
+}
+
+body section h1 {
+  text-transform: uppercase;
+  padding: 10px 0;
+  background: orange;
+  text-align: center;
+}
+
+body section content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+body section content div {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.85)), to(rgba(255, 255, 255, 0.85))), url("../img/back.svg");
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../img/back.svg");
+  background-repeat: no-repeat;
+  background-size: 200%;
+  border: 3px solid white;
+  margin: 10px;
+  padding: 10px;
+  -ms-flex-preferred-size: 400px;
+      flex-basis: 400px;
+  -webkit-box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+body section content div:hover {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+}
+
+body section content div ul {
+  list-style: circle;
+  margin-left: 30px;
+}
+
+body section a {
+  margin: 10px;
+  -ms-flex-preferred-size: 100px;
+      flex-basis: 100px;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+body section a:hover {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+}
+
+body section img {
+  max-width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*# sourceMappingURL=styles.css.map */
