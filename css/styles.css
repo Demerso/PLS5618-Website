@@ -15,6 +15,9 @@ font-family: 'Archivo Black', sans-serif;
 }
 
 body {
+  background: #0575e6;
+  background: -webkit-gradient(linear, left top, right top, from(#021b79), to(#0575e6));
+  background: linear-gradient(to right, #021b79, #0575e6);
   font-family: "Heebo", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -105,6 +108,7 @@ body nav navlinks a:hover {
 }
 
 body nav img {
+  display: block;
   width: 32px;
   height: 32px;
 }
@@ -118,6 +122,8 @@ body section h1 {
   padding: 10px 0;
   background: orange;
   text-align: center;
+  -webkit-box-shadow: inset 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
+          box-shadow: inset 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
 }
 
 body section content {
@@ -146,8 +152,8 @@ body section content div {
   padding: 10px;
   -ms-flex-preferred-size: 400px;
       flex-basis: 400px;
-  -webkit-box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75), inset 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75), inset 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
   transition: -webkit-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
@@ -166,12 +172,21 @@ body section content div ul {
 
 body section a {
   margin: 10px;
+  padding: 15px;
   -ms-flex-preferred-size: 100px;
       flex-basis: 100px;
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
   transition: -webkit-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  background-color: white;
+  border-radius: 50%;
+}
+
+body section a img {
+  display: block;
+  padding: 0;
+  margin: 0;
 }
 
 body section a:hover {
@@ -179,7 +194,7 @@ body section a:hover {
           transform: scale(1.025);
 }
 
-body section img {
+body section#partenaires img {
   max-width: 90%;
   display: block;
   margin-left: auto;

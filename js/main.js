@@ -1,4 +1,5 @@
 window.onload = () => {
+  document.body.style.opacity = "0";
   const navlinks = document.querySelector("navlinks").children;
   for (let i = 0; i < navlinks.length; i++) {
     navlinks[i].addEventListener("click", event => {
@@ -14,4 +15,9 @@ window.onload = () => {
       });
     });
   }
+  document.body.animate([{ opacity: "0" }, { opacity: "1" }], {
+    duration: 1000,
+    iterations: 1
+  });
+  document.body.style.opacity = "1";
 };
