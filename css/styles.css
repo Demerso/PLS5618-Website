@@ -3,6 +3,166 @@
 font-family: 'Heebo', sans-serif;
 font-family: 'Archivo Black', sans-serif;
 */
+nav {
+  z-index: 1;
+  overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: white;
+  -webkit-box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
+}
+
+nav img {
+  width: 40px;
+  height: 40px;
+  margin: 5px 15px;
+}
+
+nav a,
+nav .icon {
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+nav a:hover,
+nav .icon:hover {
+  background-color: black;
+  color: white;
+}
+
+nav .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+nav .icon {
+  width: 50px;
+  height: 50px;
+  display: none;
+  position: relative;
+}
+
+nav .icon div {
+  width: 10px;
+  height: 2px;
+  background-color: black;
+  margin: 1px 0;
+}
+
+nav .icon div:nth-child(1) {
+  -webkit-transition: 0.2s ease-in-out 0.2s;
+  transition: 0.2s ease-in-out 0.2s;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+nav .icon div:nth-child(3) {
+  position: absolute;
+  top: calc(50% - 2px);
+}
+
+nav .icon div:nth-child(4) {
+  -webkit-transition: 0.2s ease-in-out 0.2s;
+  transition: 0.2s ease-in-out 0.2s;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+nav .icon:hover div {
+  background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+  nav .links {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav .links a {
+    display: none;
+  }
+  nav .icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  nav.responsive .links a {
+    width: 100%;
+    display: block;
+  }
+  nav.responsive .icon > div:nth-child(1) {
+    -webkit-transition: 0.2s ease-in-out, opacity 0.1s ease-in-out 0.1s;
+    transition: 0.2s ease-in-out, opacity 0.1s ease-in-out 0.1s;
+    -webkit-transform: translate(0, 10px);
+            transform: translate(0, 10px);
+    opacity: 0;
+  }
+  nav.responsive .icon > div:nth-child(2) {
+    -webkit-transition: -webkit-transform 0.2s ease-in-out 0.2s;
+    transition: -webkit-transform 0.2s ease-in-out 0.2s;
+    transition: transform 0.2s ease-in-out 0.2s;
+    transition: transform 0.2s ease-in-out 0.2s, -webkit-transform 0.2s ease-in-out 0.2s;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  nav.responsive .icon > div:nth-child(3) {
+    -webkit-transition: -webkit-transform 0.2s ease-in-out 0.2s;
+    transition: -webkit-transform 0.2s ease-in-out 0.2s;
+    transition: transform 0.2s ease-in-out 0.2s;
+    transition: transform 0.2s ease-in-out 0.2s, -webkit-transform 0.2s ease-in-out 0.2s;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  nav.responsive .icon > div:nth-child(4) {
+    -webkit-transition: 0.2s ease-in-out, opacity 0.1s ease-in-out 0.1s;
+    transition: 0.2s ease-in-out, opacity 0.1s ease-in-out 0.1s;
+    -webkit-transform: translate(0, -10px);
+            transform: translate(0, -10px);
+    opacity: 0;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -53,64 +213,6 @@ body header img {
      object-fit: scale-down;
   max-height: 100vh;
   max-width: 100vw;
-}
-
-body nav {
-  z-index: 1;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 15px;
-  background-color: white;
-  -webkit-box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
-}
-
-body nav navlinks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body nav navlinks a {
-  padding: 5px;
-  margin: 0 5px;
-  border-radius: 3px;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
-}
-
-body nav navlinks a:hover {
-  background-color: lightblue;
-}
-
-body nav img {
-  display: block;
-  width: 32px;
-  height: 32px;
 }
 
 body section {

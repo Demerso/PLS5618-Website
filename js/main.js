@@ -1,6 +1,6 @@
 window.onload = () => {
   document.body.style.opacity = "0";
-  const navlinks = document.querySelector("navlinks").children;
+  const navlinks = document.querySelector("nav > .links").children;
   for (let i = 0; i < navlinks.length; i++) {
     navlinks[i].addEventListener("click", event => {
       event.preventDefault();
@@ -20,4 +20,23 @@ window.onload = () => {
     iterations: 1
   });
   document.body.style.opacity = "1";
+  createNavButton();
+};
+
+const createNavButton = () => {
+  const navIcon = document.querySelector("nav > .icon");
+  navIcon.onclick = () => openNav();
+  for (let i = 0; i < 4; i++) {
+    const bar = document.createElement("div");
+    navIcon.appendChild(bar);
+  }
+};
+
+const openNav = () => {
+  var nav = document.querySelector("nav");
+  if (nav.className === "topnav") {
+    nav.classList.add("responsive");
+  } else {
+    nav.className = "topnav";
+  }
 };
