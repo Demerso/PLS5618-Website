@@ -2,25 +2,28 @@ window.onload = () => {
   document.body.style.opacity = "0";
   const navlinks = document.querySelector("nav > .links").children;
   for (let i = 0; i < navlinks.length; i++) {
-    navlinks[i].addEventListener("click", event => {
-      event.preventDefault();
-      const button = event.target;
-      const link = button.hash;
-      const headerHeight = document.querySelector("nav").offsetHeight;
-      const target = document.querySelector(link);
-      console.log(target.offsetTop - headerHeight);
-      window.scrollTo({
-        top: target.offsetTop - headerHeight - 5,
-        behavior: "smooth"
-      });
-    });
+    navlinks[i].onclick = link => goto(link);
   }
   document.body.animate([{ opacity: "0" }, { opacity: "1" }], {
     duration: 1000,
     iterations: 1
   });
-  document.body.style.opacity = "1";
   createNavButton();
+  document.body.style.opacity = "1";
+};
+
+const goto = event => {
+  event.preventDefault();
+  const button = event.target;
+  if (button.tagName == "A") {
+    const link = button.hash;
+    const headerHeight = document.querySelector("nav").offsetHeight;
+    const target = document.querySelector(link);
+    window.scrollTo({
+      top: target.offsetTop - headerHeight - 5,
+      behavior: "smooth"
+    });
+  }
 };
 
 const createNavButton = () => {
