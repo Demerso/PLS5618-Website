@@ -1,15 +1,9 @@
 window.onload = () => {
-  document.body.style.opacity = "0";
   const navlinks = document.querySelector("nav > .links").children;
   for (let i = 0; i < navlinks.length; i++) {
     navlinks[i].onclick = link => goto(link);
   }
-  document.body.animate([{ opacity: "0" }, { opacity: "1" }], {
-    duration: 1000,
-    iterations: 1
-  });
   createNavButton();
-  document.body.style.opacity = "1";
 };
 
 const goto = event => {
