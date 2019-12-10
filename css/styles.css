@@ -274,9 +274,9 @@ body section content div ul {
 
 body section a {
   margin: 10px;
-  padding: 15px;
-  -ms-flex-preferred-size: 100px;
-      flex-basis: 100px;
+  padding: 20px;
+  -ms-flex-preferred-size: 140px;
+      flex-basis: 140px;
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
   transition: -webkit-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
