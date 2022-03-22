@@ -17,8 +17,8 @@ font-family: 'Archivo Black', sans-serif;
 }
 
 body {
-  background: #0575e6;
-  background: linear-gradient(to right, #021b79, #0575e6);
+  background: #009CDE;
+  background: linear-gradient(to bottom, #041C2C, #0575e6);
   font-family: "Heebo", sans-serif;
   display: flex;
   flex-flow: column nowrap;
@@ -34,10 +34,10 @@ body {
     background-size: cover;
     background-position: center;
     img {
-      margin: 0 5px;
+      padding: 10% 10%;
       object-fit: scale-down;
-      max-height: 100vh;
-      max-width: 100vw;
+      height: 100vh;
+      width: 100vw;
     }
   }
 
@@ -47,7 +47,7 @@ body {
       font-family: "Archivo Black", sans-serif;
       text-transform: uppercase;
       padding: 10px 0;
-      background: orange;
+      background: #c99700;
       text-align: center;
       box-shadow: inset 0px 1px 15px -3px rgba(0, 0, 0, 0.75);
     }
