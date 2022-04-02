@@ -1,0 +1,4 @@
+{
+    "input": "src/*.html",
+    "output": "dist"
+}
