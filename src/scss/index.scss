@@ -159,22 +159,22 @@ body {
           align-items: center;
 
           &.platine>img {
-            width: 30rem;
+            max-width: min(30rem, 100% - 2rem);
             max-height: 30rem;
           }
 
           &.or>img {
-            width: 20rem;
+            max-width: min(20rem, 100% - 2rem);
             max-height: 20rem;
           }
 
           &.argent>img {
-            width: 15rem;
+            max-width: min(15rem, 100% - 2rem);
             max-height: 15rem;
           }
 
           &.bronze>img {
-            width: 10rem;
+            max-width: min(10rem, 100% - 2rem);
             max-height: 10rem;
           }
 
